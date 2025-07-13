@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto17
+      # AWS托管的构建容器
+  build:
+    commands:
+      - echo "Building Lambda with Maven..."
+      - mvn clean package -DskipTests
+      - mkdir -p output
+      - cp target/*.jar output/lambda.jar
+  post_build:
+    commands:
+      - echo "Uploading to S3..."
+      - aws s3 cp output/lambda.jar s3://lambdahelloworldbucket/lambda-output/lambda.jar
+      # 复制jar到output目录
+
+artifacts:
+  files:
+    - output/lambda.jar

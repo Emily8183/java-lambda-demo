@@ -10,7 +10,7 @@ phases:
       - echo "Building Lambda with Maven..."
       - mvn clean package -DskipTests
       - mkdir -p output
-      - cp target/*.jar output/lambda.jar
+      - cp target/java-lambda-demo-1.0-SNAPSHOT.jar output/lambda.jar
   post_build:
     commands:
       - echo "Uploading to S3..."

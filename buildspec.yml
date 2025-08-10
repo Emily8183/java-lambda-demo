@@ -18,5 +18,6 @@ phases:
       # 复制jar到output目录
 
 artifacts:
+  base-directory: output
   files:
-    - output/lambda.jar
+    - lambda.jar

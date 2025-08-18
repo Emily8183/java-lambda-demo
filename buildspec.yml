@@ -14,7 +14,7 @@ phases:
 #  post_build: 这个lambda的的唯一职责就是生成JAR包并将其声明为artifact，不要部署
 #    commands:
 #      - echo "Uploading to S3..."
-#      - aws s3 cp output/lambda.jar s3://lambdahelloworldbucket1/lambda-output/lambda.jar
+#      - aws s3 cp output/lambda.jar s3://lambdahelloworldbucket08171013/lambda-output/lambda.jar
 #      # lambda-output/lambda.jar is the object key of the s3
 
 artifacts:
